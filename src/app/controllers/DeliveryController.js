@@ -1,9 +1,10 @@
 import * as Yup from 'yup';
 import { Op } from 'sequelize';
 
+import Queue from '../../lib/Queue';
 import DeliveryAvailable from '../jobs/DeliveryAvailable';
 import DeliveryNotAvailable from '../jobs/DeliveryNotAvailable';
-import Queue from '../../lib/Queue';
+
 import Recipient from '../models/Recipient';
 import Deliveryman from '../models/Deliveryman';
 import Delivery from '../models/Delivery';
@@ -19,6 +20,26 @@ class DeliveryController {
           [Op.like]: `%${q}%`,
         },
       },
+      attributes: [
+        'id',
+        'status',
+        'product',
+        'canceled_at',
+        'start_date',
+        'end_date',
+      ],
+      include: [
+        {
+          model: Deliveryman,
+          as: 'deliveryman',
+          attributes: ['name'],
+        },
+        {
+          model: Recipient,
+          as: 'recipient',
+          attributes: ['name', 'state', 'city'],
+        },
+      ],
     });
 
     return res.json(deliveries);

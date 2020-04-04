@@ -16,7 +16,7 @@ class ProblemController {
       ],
     });
 
-    return res.json({ problems });
+    return res.json(problems);
   }
 
   async store(req, res) {

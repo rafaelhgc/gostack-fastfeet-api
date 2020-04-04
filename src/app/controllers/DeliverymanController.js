@@ -8,7 +8,7 @@ class DeliverymanController {
   async index(req, res) {
     const { q = '' } = req.query;
 
-    const deliverymans = await Deliveryman.findAll({
+    const deliverymen = await Deliveryman.findAll({
       where: {
         name: {
           [Op.like]: `%${q}%`,
@@ -25,7 +25,7 @@ class DeliverymanController {
       ],
     });
 
-    return res.json(deliverymans);
+    return res.json(deliverymen);
   }
 
   async show(req, res) {

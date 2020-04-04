@@ -1,4 +1,4 @@
 import multer from 'multer';
-import MulterConfig from '../../config/MailConfig';
+import MulterConfig from '../../config/MulterConfig';
 
 export default multer(MulterConfig);

@@ -12,14 +12,14 @@ class SessionController {
     });
 
     if (!schema.isValidSync(req.body)) {
-      return res.send(400, { errors: 'Validation Error' });
+      return res.status(400).send({ errors: 'Validation Error' });
     }
 
     const { email, password } = req.body || {};
     const user = await User.findOne({ where: { email } });
 
     if (!user || !user.checkPassword(password)) {
-      return res.send(400, { errors: 'E-mail or password invalids.' });
+      return res.status(400).send({ errors: 'E-mail or password invalids.' });
     }
 
     const { id, name } = user;
