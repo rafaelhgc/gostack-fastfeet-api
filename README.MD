@@ -7,11 +7,11 @@
 </h2>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">
+  <a href="https://github.com/rafaelhgc/rocketseat-gostack-fastfeet-web">
     Fastfeet Web
   </a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#layout">
+  <a href="https://github.com/rafaelhgc/rocketseat-gostack-fastfeet-mobile">
     Fastfeet Mobile
   </a>
 </p>
