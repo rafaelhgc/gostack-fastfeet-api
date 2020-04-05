@@ -18,23 +18,21 @@
 
 <h3>Pré-requisitos</h3>
 <p>
-Para rodar a aplicação localmente os seguintes pré-requisitos devem ser atendidos:
+  A aplicação depende a instalação dos seguintes itens:
 </p>
 
 <ul>
-  <li>Banco de dados Postgres</li>
-  <li>Banco de dados Redis</li>
+  <li>Postgres Server</li>
+  <li>Redis Server</li>
 </ul>
 
 <h3>Instalação</h3>
 
 ```sh
 # Clone o repositório para sua maquina
-
 $ git clone git@github.com:rafaelhgc/rocketseat-gostack-fastfeet-api.git fastfeet-api
 
 # Instale as dependências do projeto
-
 $ cd fastfeet-api
 $ yarn
 ```
@@ -42,7 +40,7 @@ $ yarn
 <h3>Variáveis de Ambiente</h3>
 
 <p>
-  Certifique se preencher o arquivo <strong>.env-sample</strong> com as informações pertinentes ao seu ambiente. Após preenchido o arquivo de ser renomeado para <strong>.env</strong>
+  Certifique-se de preencher o arquivo <strong>.env-sample</strong> com as informações pertinentes ao seu ambiente. Após preenchido, renomeio o arquivo para <strong>.env</strong>
 </p>
 
 <h3>Iniciando a aplicação</h3>
