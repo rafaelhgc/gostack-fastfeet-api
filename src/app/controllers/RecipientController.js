@@ -22,7 +22,7 @@ class RecipientsController {
     const { id } = req.params;
     const recipient = await Recipient.findByPk(id);
 
-    res.json({ recipient });
+    res.json(recipient);
   }
 
   async store(req, res) {
@@ -72,7 +72,15 @@ class RecipientsController {
   }
 
   async destroy(req, res) {
-    res.send(501);
+    const recipient = await Recipient.findByPk(req.params.id);
+
+    if (!recipient) {
+      return res.status(404).send({ errors: ['Recipient not found'] });
+    }
+
+    await recipient.destroy();
+
+    return res.sendStatus(202);
   }
 }
 

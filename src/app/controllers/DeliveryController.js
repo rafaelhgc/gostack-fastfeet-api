@@ -60,6 +60,7 @@ class DeliveryController {
           model: Recipient,
           as: 'recipient',
           attributes: [
+            'id',
             'name',
             'street_address',
             'number',
