@@ -43,6 +43,23 @@ $ yarn
   Certifique-se de preencher o arquivo <strong>.env-sample</strong> com as informações pertinentes ao seu ambiente. Após preenchido, renomeio o arquivo para <strong>.env</strong>
 </p>
 
+```txt
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USER= // mailtrap user
+MAIL_PASS= // mailtrap pass
+REDIS_HOST=localhost
+REDIS_PORT=6379
+SECRET_KEY=ushallnotpass
+EXPIRES_IN=7d
+APP_URL=http://localhost:3333
+PORT=3333
+DATABASE_HOST= // redis host
+DATABASE_USERNAME= // redis user
+DATABASE_PASSWORD= // redis password
+DATABASE_DATABASE= // redis database
+```
+
 <h3>🚀 Iniciando a aplicação</h3>
 
 ```sh
