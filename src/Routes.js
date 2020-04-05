@@ -9,6 +9,7 @@ import CollectController from './app/controllers/CollectController';
 import DeliverController from './app/controllers/DeliverController';
 import ProblemControlller from './app/controllers/ProblemController';
 import DeliveryProblemControlller from './app/controllers/DeliveryProblemController';
+import AvatarController from './app/controllers/AvatarController';
 
 import authFilter from './app/middlewares/authentication.middleware';
 import upload from './app/middlewares/upload.middleware';
@@ -60,5 +61,11 @@ routes.post(
   '/deliverymen/:deliveryman_id/deliveries/:delivery_id/problems',
   ProblemControlller.store
 );
+
+routes.post('/avatars', [
+  authFilter,
+  upload.single('file'),
+  AvatarController.store,
+]);
 
 export default routes;

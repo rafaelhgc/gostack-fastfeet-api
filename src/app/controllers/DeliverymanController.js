@@ -30,12 +30,12 @@ class DeliverymanController {
 
   async show(req, res) {
     const deliveryman = await Deliveryman.findByPk(req.params.id, {
-      attributes: ['id', 'name', 'email'],
+      attributes: ['id', 'name', 'email', 'avatar_id'],
       include: [
         {
           model: File,
           as: 'avatar',
-          attributes: ['filename', 'url'],
+          attributes: ['id', 'filename', 'url'],
         },
       ],
     });
@@ -44,7 +44,7 @@ class DeliverymanController {
       return res.status(404).send({ errors: ['Deliveryman not found'] });
     }
 
-    return res.json({ deliveryman });
+    return res.json(deliveryman);
   }
 
   async store(req, res) {

@@ -81,7 +81,7 @@ class DeliveryController {
       return res.sendStatus(404).send({ errors: ['Delivery not foun'] });
     }
 
-    return res.json({ delivery });
+    return res.json(delivery);
   }
 
   async store(req, res) {
