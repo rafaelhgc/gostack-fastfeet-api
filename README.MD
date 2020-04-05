@@ -16,7 +16,7 @@
   </a>
 </p>
 
-<h3>Pré-requisitos</h3>
+<h3>🛠 Pré-requisitos</h3>
 <p>
   A aplicação depende da instalação dos seguintes itens:
 </p>
@@ -26,7 +26,7 @@
   <li>Redis Server</li>
 </ul>
 
-<h3>Instalação</h3>
+<h3>💽 Instalação</h3>
 
 ```sh
 # Clone o repositório para sua maquina
@@ -37,13 +37,13 @@ $ cd fastfeet-api
 $ yarn
 ```
 
-<h3>Variáveis de Ambiente</h3>
+<h3>📑 Variáveis de Ambiente</h3>
 
 <p>
   Certifique-se de preencher o arquivo <strong>.env-sample</strong> com as informações pertinentes ao seu ambiente. Após preenchido, renomeio o arquivo para <strong>.env</strong>
 </p>
 
-<h3>Iniciando a aplicação</h3>
+<h3>🚀 Iniciando a aplicação</h3>
 
 ```sh
 # Inicie a aplicação
