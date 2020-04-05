@@ -18,7 +18,7 @@
 
 <h3>Pré-requisitos</h3>
 <p>
-  A aplicação depende a instalação dos seguintes itens:
+  A aplicação depende da instalação dos seguintes itens:
 </p>
 
 <ul>
