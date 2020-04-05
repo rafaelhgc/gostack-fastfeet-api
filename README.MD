@@ -43,7 +43,7 @@ $ yarn
   Certifique-se de preencher o arquivo <strong>.env-sample</strong> com as informações pertinentes ao seu ambiente. Após preenchido, renomeio o arquivo para <strong>.env</strong>
 </p>
 
-````txt
+```txt
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
 MAIL_USER= // mailtrap user
@@ -58,16 +58,21 @@ DATABASE_HOST= // redis host
 DATABASE_USERNAME= // redis user
 DATABASE_PASSWORD= // redis password
 DATABASE_DATABASE= // redis database
+```
 
 <h3>🎲 Gerando estrutura e dados inicias</h3>
 
 ```sh
 $ yarn sequelize-cli db:migrate
 $ yarn sequelize-cli db:seed:all
-
 ````
+<p>
+O usuário administrador gerado pelo seed é
+<strong>
+admin@fastfeet.com:123456
+</strong>
+</p>
 
-````
 
 <h3>🚀 Iniciando a aplicação</h3>
 
@@ -77,11 +82,4 @@ $ yarn start:dev
 
 # Inicie a fila de processamento de e-mails
 $ yarn start:queue
-````
-
-<p>
-O usuário administrador gerado pelo seed é
-<strong>
-admin@fastfeet.com:123456
-</strong>
-</p>
+```
