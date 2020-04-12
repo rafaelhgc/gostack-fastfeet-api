@@ -101,24 +101,46 @@ $ yarn start:queue
 <table>
   <thead>
     <tr>
-      <th>Segunda</th>
-      <th>Terça</th>
-      <th>Quarta</th>
-      <th>Quinta</th>
-      <th>Sexta</th>
-      <th>Sábado</th>
-      <th>Domingo</th>
+      <th>Dia</th>
+      <th>Hora Início</th>
+      <th>Hora Fim</th>
     </tr>
   </thead>
   <tboby>
     <tr>
-      <td style="font-size: 10px">06:00 ás 20:00</td>
-      <td style="font-size: 10px">06:00 ás 20:00</td>
-      <td style="font-size: 10px">06:00 ás 20:00</td>
-      <td style="font-size: 10px">06:00 ás 20:00</td>
-      <td style="font-size: 10px">06:00 ás 20:00</td>
-      <td style="font-size: 10px">06:00 ás 12:00</td>
-      <td style="font-size: 10px">06:00 ás 12:00</td>
+      <td>Segunda-feira</td>
+      <td>06:00</td>
+      <td>20:00</td>
+    </tr>
+    <tr>
+      <td>Terça-feira</td>
+      <td>06:00</td>
+      <td>20:00</td>
+    </tr>
+    <tr>
+      <td>Quarta-feira</td>
+      <td>06:00</td>
+      <td>20:00</td>
+    </tr>
+    <tr>
+      <td>Quinta-feira</td>
+      <td>06:00</td>
+      <td>20:00</td>
+    </tr>
+    <tr>
+      <td>Sexta-feira</td>
+      <td>06:00</td>
+      <td>20:00</td>
+    </tr>
+    <tr>
+      <td>Sábado</td>
+      <td>06:00</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>Domingo</td>
+      <td>06:00</td>
+      <td>12:00</td>
     </tr>
   </tbody>
 </table>
