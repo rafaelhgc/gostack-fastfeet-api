@@ -14,7 +14,7 @@ class DeliverymanController {
           [Op.like]: `%${q}%`,
         },
       },
-      order: ['name'],
+      order: ['id', 'name'],
       attributes: ['id', 'name', 'email'],
       include: [
         {
