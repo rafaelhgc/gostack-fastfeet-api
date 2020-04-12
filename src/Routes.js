@@ -25,7 +25,7 @@ routes.put('/recipients/:id', [authFilter, RecipientController.update]);
 routes.delete('/recipients/:id', [authFilter, RecipientController.destroy]);
 
 routes.get('/deliverymen', [authFilter, DeliverymanController.index]);
-routes.get('/deliverymen/:id', [authFilter, DeliverymanController.show]);
+routes.get('/deliverymen/:id', [DeliverymanController.show]);
 routes.post('/deliverymen', [authFilter, DeliverymanController.store]);
 routes.put('/deliverymen/:id', [authFilter, DeliverymanController.update]);
 routes.delete('/deliverymen/:id', [authFilter, DeliverymanController.destroy]);
@@ -36,7 +36,6 @@ routes.post('/deliveries', [authFilter, DeliveryController.store]);
 routes.put('/deliveries/:id', [authFilter, DeliveryController.update]);
 routes.delete('/deliveries/:id', [authFilter, DeliveryController.destroy]);
 routes.get('/deliveries/:delivery_id/problems', [
-  authFilter,
   DeliveryProblemControlller.index,
 ]);
 

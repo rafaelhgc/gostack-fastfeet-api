@@ -6,7 +6,7 @@ import Recipient from '../models/Recipient';
 class OrderController {
   async index(req, res) {
     const { deliveryman_id } = req.params;
-    const { done = false } = req.query;
+    const { done = 'false' } = req.query;
 
     const deliveryman = await Deliveryman.findByPk(deliveryman_id);
 
@@ -18,11 +18,27 @@ class OrderController {
       where: {
         deliveryman_id,
         canceled_at: null,
-        end_date: done ? { [Op.not]: null } : null,
+        end_date: done === 'true' ? { [Op.not]: null } : null,
       },
+      order: [['createdAt', 'ASC']],
+      include: [
+        {
+          model: Recipient,
+          as: 'recipient',
+          attributes: [
+            'name',
+            'street_address',
+            'number',
+            'complement',
+            'state',
+            'city',
+            'zip_code',
+          ],
+        },
+      ],
     });
 
-    return res.json({ orders });
+    return res.json(orders);
   }
 
   async show(req, res) {

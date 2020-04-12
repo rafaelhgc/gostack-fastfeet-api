@@ -39,10 +39,8 @@ class CollectController {
     now.setUTCHours(now.getHours());
 
     if (!isAfter(now, start_at) || !isBefore(now, end_at)) {
-      return res.send(400, {
-        errors: [
-          `You can't collect today between ${restriction.start_at} and ${restriction.end_at}`,
-        ],
+      return res.status(400).send({
+        error: `Periodo de coleta restrito entre ${restriction.start_at} e ${restriction.end_at}`,
       });
     }
 

@@ -8,7 +8,7 @@ class DeliveryProblemController {
       attributes: ['id', 'description', 'created_at'],
     });
 
-    return res.json({ problems });
+    return res.json(problems);
   }
 }
 

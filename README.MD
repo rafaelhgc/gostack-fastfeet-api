@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
-  Fastfeet API
+  Fastfeet Mobile
 </h2>
 
 <p align="center">
@@ -11,8 +11,8 @@
     Fastfeet Web
   </a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/rafaelhgc/rocketseat-gostack-fastfeet-mobile">
-    Fastfeet Mobile
+  <a href="https://github.com/rafaelhgc/rocketseat-gostack-fastfeet-api">
+    Fastfeet API
   </a>
 </p>
 

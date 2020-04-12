@@ -25,7 +25,7 @@ class ProblemController {
     });
 
     if (!schema.isValidSync(req.body)) {
-      return res.send(400, { errors: ['Invalid Form'] });
+      return res.status(400).send({ errors: 'Invalid Form' });
     }
 
     const { delivery_id, deliveryman_id } = req.params;
