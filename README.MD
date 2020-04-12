@@ -112,13 +112,13 @@ $ yarn start:queue
   </thead>
   <tboby>
     <tr>
-      <td>06:00 ás 20:00</td>
-      <td>06:00 ás 20:00</td>
-      <td>06:00 ás 20:00</td>
-      <td>06:00 ás 20:00</td>
-      <td>06:00 ás 20:00</td>
-      <td>06:00 ás 12:00</td>
-      <td>06:00 ás 12:00</td>
+      <td><small>06:00 ás 20:00</small></td>
+      <td><small>06:00 ás 20:00</small></td>
+      <td><small>06:00 ás 20:00</small></td>
+      <td><small>06:00 ás 20:00</small></td>
+      <td><small>06:00 ás 20:00</small></td>
+      <td><small>06:00 ás 12:00</small></td>
+      <td><small>06:00 ás 12:00</small></td>
     </tr>
   </tbody>
 </table>
