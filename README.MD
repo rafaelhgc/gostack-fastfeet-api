@@ -65,14 +65,7 @@ DATABASE_DATABASE= // redis database
 ```sh
 $ yarn sequelize-cli db:migrate
 $ yarn sequelize-cli db:seed:all
-````
-<p>
-O usuário administrador gerado pelo seed é
-<strong>
-admin@fastfeet.com:123456
-</strong>
-</p>
-
+```
 
 <h3>🚀 Iniciando a aplicação</h3>
 
@@ -83,3 +76,49 @@ $ yarn start:dev
 # Inicie a fila de processamento de e-mails
 $ yarn start:queue
 ```
+
+<h3>👨‍🔧 Administradores</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>E-mail</th>
+      <th>Senha</th>
+    </tr>
+  </thead>
+  <tboby>
+    <tr>
+      <td>admin@fastfeet.com</td>
+      <td>123456</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>🕐 Restrições de Horários</h3>
+<p>
+  Os entregadores só porerão iniciar uma coleta dentro dos horários abaixo
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Segunda</th>
+      <th>Terça</th>
+      <th>Quarta</th>
+      <th>Quinta</th>
+      <th>Sexta</th>
+      <th>Sábado</th>
+      <th>Domingo</th>
+    </tr>
+  </thead>
+  <tboby>
+    <tr>
+      <td>06:00 ás 20:00</td>
+      <td>06:00 ás 20:00</td>
+      <td>06:00 ás 20:00</td>
+      <td>06:00 ás 20:00</td>
+      <td>06:00 ás 20:00</td>
+      <td>06:00 ás 12:00</td>
+      <td>06:00 ás 12:00</td>
+    </tr>
+  </tbody>
+</table>
