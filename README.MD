@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
-  Fastfeet Mobile
+  Fastfeet API
 </h2>
 
 <p align="center">
