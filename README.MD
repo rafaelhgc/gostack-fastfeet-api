@@ -11,8 +11,8 @@
     Fastfeet Web
   </a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/rafaelhgc/rocketseat-gostack-fastfeet-api">
-    Fastfeet API
+  <a href="https://github.com/rafaelhgc/rocketseat-gostack-fastfeet-mobile">
+    Fastfeet Mobile
   </a>
 </p>
 
