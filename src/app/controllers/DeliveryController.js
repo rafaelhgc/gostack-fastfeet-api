@@ -20,7 +20,7 @@ class DeliveryController {
           [Op.like]: `%${q}%`,
         },
       },
-      order: [['createdAt', 'ASC']],
+      order: ['id'],
       attributes: [
         'id',
         'status',
