@@ -62,6 +62,8 @@ DATABASE_DATABASE= // redis database
 
 <h3>🎲 Gerando estrutura e dados inicias</h3>
 
+<strong style="color: red">ATENÇÃO! </strong> A aplicação possuí restrições de horário para coleta. Essas restrições podem ser alteradas no seed ``
+
 ```sh
 $ yarn sequelize-cli db:migrate
 $ yarn sequelize-cli db:seed:all
@@ -90,57 +92,6 @@ $ yarn start:queue
     <tr>
       <td>admin@fastfeet.com</td>
       <td>123456</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>🕐 Restrições de Horários</h3>
-<p>
-  Os entregadores só porerão iniciar uma coleta dentro dos horários abaixo
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Dia</th>
-      <th>Hora Início</th>
-      <th>Hora Fim</th>
-    </tr>
-  </thead>
-  <tboby>
-    <tr>
-      <td>Segunda-feira</td>
-      <td>06:00</td>
-      <td>20:00</td>
-    </tr>
-    <tr>
-      <td>Terça-feira</td>
-      <td>06:00</td>
-      <td>20:00</td>
-    </tr>
-    <tr>
-      <td>Quarta-feira</td>
-      <td>06:00</td>
-      <td>20:00</td>
-    </tr>
-    <tr>
-      <td>Quinta-feira</td>
-      <td>06:00</td>
-      <td>20:00</td>
-    </tr>
-    <tr>
-      <td>Sexta-feira</td>
-      <td>06:00</td>
-      <td>20:00</td>
-    </tr>
-    <tr>
-      <td>Sábado</td>
-      <td>06:00</td>
-      <td>12:00</td>
-    </tr>
-    <tr>
-      <td>Domingo</td>
-      <td>06:00</td>
-      <td>12:00</td>
     </tr>
   </tbody>
 </table>
