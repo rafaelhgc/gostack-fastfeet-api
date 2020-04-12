@@ -78,20 +78,3 @@ $ yarn start:dev
 # Inicie a fila de processamento de e-mails
 $ yarn start:queue
 ```
-
-<h3>👨‍🔧 Administradores</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>E-mail</th>
-      <th>Senha</th>
-    </tr>
-  </thead>
-  <tboby>
-    <tr>
-      <td>admin@fastfeet.com</td>
-      <td>123456</td>
-    </tr>
-  </tbody>
-</table>
