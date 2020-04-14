@@ -14,6 +14,10 @@ class Queue {
   }
 
   init() {
+    if (process.env.NODE_ENV === 'test') {
+      return;
+    }
+
     jobs.forEach(({ key, handle }) => {
       this.queues[key] = {
         bee: new Bee(key, {

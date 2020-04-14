@@ -1,4 +1,5 @@
-import dotenv from 'dotenv';
+import './bootstrap';
+
 import path from 'path';
 import express from 'express';
 import Youch from 'youch';
@@ -7,8 +8,6 @@ import cors from 'cors';
 import Routes from './Routes';
 
 import './database';
-
-dotenv.config();
 
 require('dotenv').config();
 
