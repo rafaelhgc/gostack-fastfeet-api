@@ -62,7 +62,7 @@ DATABASE_DATABASE= // redis database
 
 <h3>🎲 Gerando estrutura e dados inicias</h3>
 
-<strong style="color: red">ATENÇÃO! </strong> A aplicação possuí restrições de horário para coleta. Essas restrições podem ser alteradas no seed `20200213005120-restrictions.js`
+🛑 Atenção A aplicação possuí restrições de horário para coleta. Essas restrições podem ser alteradas no seed `20200213005120-restrictions.js`
 
 ```sh
 $ yarn sequelize-cli db:migrate
