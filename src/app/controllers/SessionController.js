@@ -1,4 +1,3 @@
-import * as yup from 'yup';
 import jwt from 'jsonwebtoken';
 
 import User from '../models/User';
@@ -6,15 +5,6 @@ import SecurityConfig from '../../config/SecurityConfig';
 
 class SessionController {
   async store(req, res) {
-    const schema = yup.object().shape({
-      email: yup.string().required(),
-      password: yup.string().required(),
-    });
-
-    if (!schema.isValidSync(req.body)) {
-      return res.status(400).send({ errors: 'Validation Error' });
-    }
-
     const { email, password } = req.body || {};
     const user = await User.findOne({ where: { email } });
 

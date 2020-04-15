@@ -18,6 +18,7 @@
     "newline-before-return": "error",
     "no-param-reassign": "off",
     "class-methods-use-this": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "import/prefer-default-export": "off"
   }
 }

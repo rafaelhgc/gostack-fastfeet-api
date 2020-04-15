@@ -1,5 +1,3 @@
-import * as Yup from 'yup';
-
 import Problem from '../models/Problem';
 import Delivery from '../models/Delivery';
 
@@ -20,14 +18,6 @@ class ProblemController {
   }
 
   async store(req, res) {
-    const schema = Yup.object().shape({
-      description: Yup.string().required(),
-    });
-
-    if (!schema.isValidSync(req.body)) {
-      return res.status(400).send({ errors: 'Invalid Form' });
-    }
-
     const { delivery_id, deliveryman_id } = req.params;
 
     const delivery = await Delivery.findOne({

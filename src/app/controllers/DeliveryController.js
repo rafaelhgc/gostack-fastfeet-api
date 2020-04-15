@@ -1,4 +1,3 @@
-import * as Yup from 'yup';
 import { Op } from 'sequelize';
 
 import Queue from '../../lib/Queue';
@@ -87,16 +86,6 @@ class DeliveryController {
   }
 
   async store(req, res) {
-    const schema = Yup.object().shape({
-      recipient_id: Yup.number().required(),
-      deliveryman_id: Yup.number().required(),
-      product: Yup.string().required(),
-    });
-
-    if (!schema.isValidSync(req.body)) {
-      return res.status(400).send({ errors: ['Invalid Form'] });
-    }
-
     const recipient = await Recipient.findByPk(req.body.recipient_id);
 
     if (!recipient) {
@@ -122,12 +111,6 @@ class DeliveryController {
 
   async update(req, res) {
     const { id } = req.params;
-
-    const schema = Yup.object().shape({
-      recipient_id: Yup.number().required(),
-      deliveryman_id: Yup.number().required(),
-      product: Yup.string().required(),
-    });
 
     const delivery = await Delivery.findByPk(id, {
       include: [
@@ -159,10 +142,6 @@ class DeliveryController {
 
     if (!delivery) {
       return res.sendStatus(404).send({ errors: ['Delivery not found'] });
-    }
-
-    if (!schema.isValidSync(req.body)) {
-      return res.status(400).send({ errors: ['Invalid Form'] });
     }
 
     const recipient = await Recipient.findByPk(req.body.recipient_id);

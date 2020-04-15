@@ -7,10 +7,7 @@ export default async (req, res, next) => {
   const header = req.header('Authorization');
 
   if (!header || !header.startsWith('Bearer ')) {
-    res.sendStatus(401);
-    next(false);
-
-    return;
+    return res.sendStatus(401);
   }
 
   const token = header.substring(7);
@@ -24,7 +21,6 @@ export default async (req, res, next) => {
 
     next();
   } catch (err) {
-    res.sendStatus(401);
-    throw err;
+    return res.sendStatus(401);
   }
 };

@@ -1,4 +1,3 @@
-import * as Yup from 'yup';
 import { Op } from 'sequelize';
 
 import Deliveryman from '../models/Deliveryman';
@@ -48,17 +47,6 @@ class DeliverymanController {
   }
 
   async store(req, res) {
-    const schema = Yup.object().shape({
-      name: Yup.string().required(),
-      email: Yup.string()
-        .email()
-        .required(),
-    });
-
-    if (!schema.isValidSync(req.body)) {
-      return res.status(400).send({ errors: ['Invalid Form'] });
-    }
-
     const existsEmail = await Deliveryman.findOne({
       where: { email: req.body.email },
     });
@@ -75,17 +63,6 @@ class DeliverymanController {
   }
 
   async update(req, res) {
-    const schema = Yup.object().shape({
-      name: Yup.string().required(),
-      email: Yup.string()
-        .email()
-        .required(),
-    });
-
-    if (!schema.isValidSync(req.body)) {
-      return res.status(400).send({ errors: ['Invalid Form'] });
-    }
-
     const deliveryman = await Deliveryman.findByPk(req.params.id);
 
     if (!deliveryman) {

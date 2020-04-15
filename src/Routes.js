@@ -11,30 +11,53 @@ import ProblemControlller from './app/controllers/ProblemController';
 import DeliveryProblemControlller from './app/controllers/DeliveryProblemController';
 import AvatarController from './app/controllers/AvatarController';
 
-import authFilter from './app/middlewares/authentication.middleware';
+import { deliverySchema } from './app/validators/DeliveryValidator';
+import { deliverymanSchema } from './app/validators/DeliverymanValidator';
+import { problemSchema } from './app/validators/ProblemValidator';
+import { recipientSchema } from './app/validators/RecipientValidator';
+import { sessionSchema } from './app/validators/SessionValidator';
+
+import auth from './app/middlewares/authentication.middleware';
 import upload from './app/middlewares/upload.middleware';
+import validate from './app/middlewares/validator.middleware';
 
 const routes = new Router();
 
-routes.post('/sessions', SessionController.store);
+routes.post('/sessions', [validate(sessionSchema), SessionController.store]);
 
-routes.get('/recipients', [authFilter, RecipientController.index]);
-routes.get('/recipients/:id', [authFilter, RecipientController.show]);
-routes.post('/recipients', [authFilter, RecipientController.store]);
-routes.put('/recipients/:id', [authFilter, RecipientController.update]);
-routes.delete('/recipients/:id', [authFilter, RecipientController.destroy]);
+routes.get('/recipients', [auth, RecipientController.index]);
+routes.get('/recipients/:id', [auth, RecipientController.show]);
+routes.post('/recipients', [
+  auth,
+  validate(recipientSchema),
+  RecipientController.store,
+]);
+routes.put('/recipients/:id', [
+  auth,
+  validate(recipientSchema),
+  RecipientController.update,
+]);
+routes.delete('/recipients/:id', [auth, RecipientController.destroy]);
 
-routes.get('/deliverymen', [authFilter, DeliverymanController.index]);
+routes.get('/deliverymen', [auth, DeliverymanController.index]);
 routes.get('/deliverymen/:id', [DeliverymanController.show]);
-routes.post('/deliverymen', [authFilter, DeliverymanController.store]);
-routes.put('/deliverymen/:id', [authFilter, DeliverymanController.update]);
-routes.delete('/deliverymen/:id', [authFilter, DeliverymanController.destroy]);
+routes.post('/deliverymen', [auth, DeliverymanController.store]);
+routes.put('/deliverymen/:id', [auth, DeliverymanController.update]);
+routes.delete('/deliverymen/:id', [auth, DeliverymanController.destroy]);
 
-routes.get('/deliveries', [authFilter, DeliveryController.index]);
-routes.get('/deliveries/:id', [authFilter, DeliveryController.show]);
-routes.post('/deliveries', [authFilter, DeliveryController.store]);
-routes.put('/deliveries/:id', [authFilter, DeliveryController.update]);
-routes.delete('/deliveries/:id', [authFilter, DeliveryController.destroy]);
+routes.get('/deliveries', [auth, DeliveryController.index]);
+routes.get('/deliveries/:id', [auth, DeliveryController.show]);
+routes.post('/deliveries', [
+  auth,
+  validate(deliverySchema),
+  DeliveryController.store,
+]);
+routes.put('/deliveries/:id', [
+  auth,
+  validate(deliverymanSchema),
+  DeliveryController.update,
+]);
+routes.delete('/deliveries/:id', [auth, DeliveryController.destroy]);
 routes.get('/deliveries/:delivery_id/problems', [
   DeliveryProblemControlller.index,
 ]);
@@ -55,16 +78,12 @@ routes.post('/deliverymen/:deliveryman_id/orders/:order_id/deliver', [
   DeliverController.store,
 ]);
 
-routes.get('/problems', [authFilter, ProblemControlller.index]);
-routes.post(
-  '/deliverymen/:deliveryman_id/deliveries/:delivery_id/problems',
-  ProblemControlller.store
-);
-
-routes.post('/avatars', [
-  authFilter,
-  upload.single('file'),
-  AvatarController.store,
+routes.get('/problems', [auth, ProblemControlller.index]);
+routes.post('/deliverymen/:deliveryman_id/deliveries/:delivery_id/problems', [
+  validate(problemSchema),
+  ProblemControlller.store,
 ]);
+
+routes.post('/avatars', [auth, upload.single('file'), AvatarController.store]);
 
 export default routes;
