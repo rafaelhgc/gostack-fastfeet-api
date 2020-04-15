@@ -20,10 +20,15 @@ import { sessionSchema } from './app/validators/SessionValidator';
 import auth from './app/middlewares/authentication.middleware';
 import upload from './app/middlewares/upload.middleware';
 import validate from './app/middlewares/validator.middleware';
+import brute from './app/middlewares/brute-force.middleware';
 
 const routes = new Router();
 
-routes.post('/sessions', [validate(sessionSchema), SessionController.store]);
+routes.post('/sessions', [
+  brute.prevent,
+  validate(sessionSchema),
+  SessionController.store,
+]);
 
 routes.get('/recipients', [auth, RecipientController.index]);
 routes.get('/recipients/:id', [auth, RecipientController.show]);
