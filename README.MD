@@ -55,9 +55,9 @@ EXPIRES_IN=7d
 APP_URL=http://localhost:3333
 PORT=3333
 DATABASE_HOST= // redis host
-DATABASE_USERNAME= // redis user
-DATABASE_PASSWORD= // redis password
-DATABASE_DATABASE= // redis database
+DATABASE_USERNAME= // postgres user
+DATABASE_PASSWORD= // postgres password
+DATABASE_DATABASE= // postgres database
 ```
 
 <h3>🎲 Gerando estrutura e dados inicias</h3>
